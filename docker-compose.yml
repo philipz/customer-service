@@ -34,6 +34,8 @@ services:
 
   zipkin:
     image: openzipkin/zipkin-slim
+    ports:
+      - "9411:9411"
 
   ############################
   # Redis (commented out as we are using a public mqtt broker for testing, no need for local instance of redis or mosquitto)
@@ -48,5 +50,3 @@ services:
 
 networks:
   customer-service:
-    external:
-      name: local_customer_service
